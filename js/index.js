@@ -34,3 +34,19 @@ allElements.forEach(function(element) {
         }
     }
 });*/
+
+const imageHeights = document.querySelectorAll('img');
+console.log(imageHeights);
+
+imageHeights.forEach(function(element) {
+    element.ondblclick = function(event) {
+        event.target.style.height = '50px';
+        console.log('dbleclick works');
+    }
+});
+
+document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') {
+        console.log('keydown works');
+    }
+});
