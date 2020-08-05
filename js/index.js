@@ -44,6 +44,8 @@ document.addEventListener('keydown', event => {
 });
 
 
+
+//Testing for propagation
 Array.from(document.all).forEach(function(element) {
     element.addEventListener('click', function(event) {
         console.log('Testing for propagation');
@@ -60,4 +62,21 @@ allParagraphs.forEach(function(element) {
 
         event.stopPropagation();
     });
+});
+
+// number 8 - 10
+
+document.addEventListener('keydown', function(element) {
+    if (element.key === 'PageUp') {
+        allParagraphs.forEach(function(event) {
+            event.style.fontSize = 'x-large';
+        });
+        console.log('PgUp is working');
+    }
+    if (element.key === 'PageDown') {
+        allParagraphs.forEach(function(event) {
+            event.style.fontSize = 'x-small';
+        });
+        console.log('PgDn is working');
+    }
 });
